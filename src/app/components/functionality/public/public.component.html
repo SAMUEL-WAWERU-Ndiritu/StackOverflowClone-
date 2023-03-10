@@ -1,0 +1,81 @@
+<!-- 
+<div class="container-fluid">
+    <div class="row-2">
+        <div class="navbar-left">
+    
+            <div class="image-icon" >
+                <img src="../../../../../assets/images/stkf.png" alt=""/>
+                <h2 routerLink="home">Stack <span>overflow</span></h2>
+            </div>
+            <ul>
+                <li><a routerLink="home">About</a></li>
+                <li><a href="#" >Products</a></li>
+                <li><a href="#" >For Teams</a></li>
+
+            </ul>
+         
+            <div class='header__search'>
+                <div><i class="fas fa-search header__searchIcon"></i></div>
+                <input type='text' placeholder="Search..." class='header__searchInput'/>
+           
+        </div>
+        </div>
+        <div class="navbar-right">
+           <button class="btn btn-info" routerLink="Login">Log in</button>
+           
+            
+
+        </div>
+    </div>
+</div>     -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2" id="teed">
+            <div class="dropdown">
+                <ul>
+                    <li><h4><a routerLink="../home">Home</a></h4></li>
+                    <li><h4><a href="">Public</a></h4>
+                    
+                    <ul>
+                        <li><h4><a routerLink="public/allQuestions">Questions</a></h4></li>
+                        <li><h4><a href="">Tags</a></h4></li>
+                        <li><h4><a href="">Users</a></h4></li>
+                        <li><h4><a href="">Companies</a></h4></li>
+                    </ul>
+                    
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-7"><router-outlet></router-outlet></div>
+        <div class="col-md-3">
+            <div class="cont">
+                <h3>The Overflow Blog</h3>
+                <div class="cont-1">
+                    <div>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                       <p>Observability is key to the future of software (and your DevOps career)</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                       <p>Podcast 374: How valuable is your screen name?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cont">
+                <h3>Featured on Meta</h3>
+                <div class="cont-1">
+                    <div>
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                       <p>Review queue workflows - Final release....</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                       <p>Please welcome Valued Associates: #958 - V2Blast #959 - SpencerG</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
+

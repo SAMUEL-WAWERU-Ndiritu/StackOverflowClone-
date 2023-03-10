@@ -1,0 +1,32 @@
+<div class="form-body">
+    <div class="row">
+    
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Login Today</h3>
+                        <p>Fill in the data below.</p>
+                        <!-- <p *ngIf="error" [errorMessage]="error"(close)="Close()" ></p> -->
+                        <form class="requires-validation" [formGroup]="form" (ngSubmit)="submitForm()">
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" name="email" formControlName="Email" placeholder="E-mail Address" required>
+                                
+                            </div>
+    
+                           <div class="col-md-12">
+                              <input class="form-control" type="password" formControlName="Password"  name="password" placeholder="Password" required>
+                             
+                           </div>
+    
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+      
+    </div>
+</div>

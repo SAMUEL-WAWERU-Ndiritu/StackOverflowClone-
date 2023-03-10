@@ -1,0 +1,50 @@
+.height{
+    height: 100vh;
+}
+.header{
+    text-align: start;
+    padding: 20px;
+    width:100%;
+}
+.header h3{
+    color:black;
+    font-size: large;
+    font-weight: 700;
+    text-align: start;
+    padding: 10px;
+}
+.header p{
+    color:gray;
+    word-wrap: break-word;
+    font-size: medium;
+    font-weight: 600;
+    text-align: start;
+    padding: 10px;
+}
+.row{
+    width:100%;
+    /* margin: auto; */
+}
+.text{
+    width:90%;
+    border:1px solid gray;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    height:30vh;
+    margin: 10px;
+}
+.text h4{
+    color:rgb(7, 7, 122);
+    background-color: whitesmoke;
+    padding: 10px;
+    font-size: medium;
+    font-weight: 400;
+}
+.text p{
+    color:gray;
+    padding: 10px;
+    font-size: medium;
+    font-weight: 400;
+    text-align: start;
+}

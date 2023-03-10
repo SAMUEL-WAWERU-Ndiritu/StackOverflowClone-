@@ -1,0 +1,51 @@
+
+    <div class="container-fluid">
+        <div class="row-2">
+            <div class="navbar-left">
+                <div class="icon">
+                    <i  (click)=" toggleHi()" class="fas fa-bars" ></i>
+                </div>
+                <div class="image-icon" >
+                    <img src="../../../assets/images/stkf.png" alt=""/>
+                    <h2 routerLink="home">Stack <span>overflow</span></h2>
+                </div>
+                <ul>
+                    <li><a routerLink="home">About</a></li>
+                    <li><a href="#" >Products</a></li>
+                    <li><a href="#" >For Teams</a></li>
+    
+                </ul>
+             
+                <div class='header__search'>
+                    <div><i class="fas fa-search header__searchIcon"></i></div>
+                    <input type='text' placeholder="Search..." class='header__searchInput'/>
+            </div>
+            </div>
+            <div class="navbar-right">
+               <!-- <button class="btn btn-info" routerLink="Login">Log in</button>
+                <button class="btn btn-primary" routerLink="SignUp">Sign Up</button>  -->
+                <a *ngIf="!auth.isLoggedIn" routerLink="Login">Login</a>
+                <a *ngIf="!auth.isLoggedIn" routerLink="SignUp">Register</a>
+                 <a *ngIf="auth.isLoggedIn" >Welcome {{auth.getName()}}</a>
+                  <a *ngIf="auth.isLoggedIn" (click)="auth.logout()" routerLink="">Logout</a>
+
+
+            </div>
+        </div>
+    </div>    
+
+<div  *ngIf="showHi" class="dropdown">
+    <ul>
+        <li><h4><a routerLink="home">Home</a></h4></li>
+        <li><h4><a routerLink="public/allQuestions">Public</a></h4>
+        
+        <ul>
+            <li><h4><a routerLink="public/allQuestions">Questions</a></h4></li>
+            <li><h4><a routerLink="public/tags">Tags</a></h4></li>
+            <li><h4><a routerLink="public/users">Users</a></h4></li>
+            <li><h4><a href="">Companies</a></h4></li>
+        </ul>
+        
+        </li>
+    </ul>
+</div>

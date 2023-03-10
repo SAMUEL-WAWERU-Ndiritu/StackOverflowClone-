@@ -1,0 +1,70 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding:10px;
+}
+.header h3{
+    font-size: xx-large;
+    font-weight: 600;
+    color: black;
+    text-align: start;
+}
+.header p{
+    text-align: end;
+}
+.header p button{
+    padding: 10px;
+    background-color: rgb(33, 33, 230);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color:white;
+}
+.total{
+    font-size: medium;
+    font-weight: 600;
+    text-align: start;
+    padding: 7px;
+}
+.question{
+    width: 100%;
+    background-color: #fbf3d5;
+    margin-left: 4px;
+    margin-right: 3px;
+    padding-top: 20px;
+    height: 19vh;
+    border-bottom: 1px solid gray;
+}
+.question h4{
+    text-align: center;
+    font-size: medium;
+    font-weight: 600;
+    word-wrap: break-word;
+    width: 80%;
+}
+.question .quiz{
+    display: flex;
+    justify-content: space-between;
+    height: 5vh;
+    padding:10px;
+}
+.question .quiz div{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.question .quiz div p{
+    text-align: center;
+    font-size: medium;
+    font-weight: 300;
+}
+.question .quiz div h5{
+    text-align: center;
+    color: gray;
+    font-size: small;
+    font-weight: 300;
+}

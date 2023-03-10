@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <h3>
+            Ask a public Question
+        </h3>
+        <div class="contain">
+            <form class="form-group"  [formGroup]="form" (ngSubmit)="submitForm()">
+                <div class="form-control" id="form-c">
+                    <h4>Title</h4>
+                    <p>Be specific and imagine you’re asking a question to another person</p>
+                    <input type="text" formControlName="Title" name="Title" placeholder="eg. What is arrow function?"/>
+                    <!-- <input type="text" formControlName="Title"  placeholder="eg. What is arrow function?"/> -->
+                </div>
+                <div class="form-control" id="form-c">
+                    <h4>Body</h4>
+                    <p>Include all the information someone would need to answer your question</p>
+                    <textarea name="" id="" formControlName="Body" cols="30" rows="10"></textarea>
+                    <!-- <editor id="description" formControlName="Body" name="Body"></editor> -->
+                </div>
+                <div class="form-control" id="form-c">
+                    <h4>Tags</h4>
+                    <p>Add up to 5 tags to describe what your question is aboutn</p>
+                    <input type="text" formControlName="Tags" placeholder="eg. xml or wordpress"/>
+                </div>
+                <div class="btn" ><button type="submit" >Review your question</button></div>
+            </form>
+        </div>
+    </div>
+</div>

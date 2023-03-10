@@ -1,0 +1,62 @@
+h3{
+    font-size: xx-large;
+    font-weight: 800;
+    text-align: start;
+    padding: 20px;
+}
+.contain{
+    width: 100%;
+    /* height:50vh; */
+    margin: auto;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+#form-c{
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+    margin-top: 10px;
+    border: none;
+}
+#form-c h4{
+    font-size: medium;
+    font-weight: 600;
+    text-align: start;
+}
+#form-c p{
+    font-size:500 ;
+    font-size: medium;
+    text-align: start;
+    color:gray;
+}
+#form-c input{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    height:40px;
+    border-radius: 5px;
+}
+#form-c textarea{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+.btn{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: start;
+}
+.btn button{
+   /* margin-left:20px; */
+   padding: 10px;
+   background-color: #009dff;
+    border: 1px solid #009dff;
+   border: none;
+   outline: none;
+   border-radius: 10px;
+   cursor: pointer;
+   color:white;
+
+}

@@ -1,0 +1,54 @@
+.header{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: white;
+    margin-top: 20px;
+    width:100%;
+}
+.img{
+    border: 1px solid purple;
+    padding: 20px;
+    background-color: purple;
+    text-align: center;
+    /* width:30px; */
+}
+.img h4{
+    color:white;
+    font-size: x-large;
+    font-weight: 700;
+
+}
+.header-end{
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    padding: 10px;
+}
+.header-end h3{
+    color:black;
+    font-size: medium;
+    font-weight: 500;
+}
+.header-end p{
+    color:gray;
+    font-size: small;
+    font-weight: 500;
+    text-align: start;
+    padding: 10px;
+}
+.con{
+    margin-top: 10px;
+}
+.con h4{
+    color:black;
+    font-size: small;
+    font-weight: 500;
+}
+.con p{
+    color:gray;
+    font-size: small;
+    text-align: start;
+    padding: 10px;
+    font-weight: 500;
+}

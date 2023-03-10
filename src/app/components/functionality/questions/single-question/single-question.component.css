@@ -1,0 +1,129 @@
+.quiz {
+    margin-top: 10px;
+    background-color: white;
+    width: 100%;
+    height: 50vh;
+}
+.quiz h4{
+
+        font-size: large;
+        font-weight: 600;
+        color: black;
+        text-align: start;
+        margin-left: 50px;
+        margin-top: 30px;
+    
+}
+.quiz-data{
+    display: flex;
+    gap: 60px;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 10px;
+}
+.quiz-data-start{
+    display: flex;
+    margin-left:0 ;
+    text-align:center ;
+    flex-direction: column;
+    gap: 10px;
+}
+.quiz-data-start svg{
+    height:30px;
+    color:black;
+    width:20px;
+    cursor: pointer;
+}
+.quiz-data-start p{
+    font-size: medium;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: start;
+    padding-left: 8px;
+}
+.quiz-data-s{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap:60px;
+}
+.quiz-data-s h5{
+    font-size: medium;
+    font-weight: 400;
+    text-align: start;
+}
+.quiz-data-s p{
+    font-size: medium;
+    font-weight: 300;
+    color: gray;
+    padding-top: 10px;
+}
+.data-start{
+    width:inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.data-start p{
+    font-size: medium;
+    font-weight: 200;
+    color: gray;
+    padding-top: 10px; 
+}
+.data-star div,.data-starr{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:5px;
+}
+.data-starr .t{
+    background-color: orange;
+    padding: 5px 8px;
+    color: black;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+.contain{
+    width: 100%;
+    /* height:30vh; */
+    margin: auto;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+#form-c{
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+    margin-top: 10px;
+    border: none;
+}
+#form-c h4{
+    font-size: medium;
+    font-weight: 600;
+    text-align: start;
+}
+#form-c textarea{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+.btn{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: start;
+}
+.btn button{
+   /* margin-left:20px; */
+   padding: 10px;
+   background-color: #009dff;
+    border: 1px solid #009dff;
+   border: none;
+   outline: none;
+   border-radius: 10px;
+   cursor: pointer;
+   color:white;
+
+}

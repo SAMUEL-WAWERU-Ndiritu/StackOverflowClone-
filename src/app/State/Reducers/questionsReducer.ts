@@ -24,87 +24,81 @@ const initialState:QuestionsInterface={
     deleteError:'',
 }
 
-const questionsSliceState= createFeatureSelector<QuestionsInterface>('questions')
+const questionsSliceState= createFeatureSelector<QuestionsInterface>('Questions')
 
 export const myQuestions= createSelector(questionsSliceState, state=>state.questions)
 const myQuestionsId= createSelector(questionsSliceState, state=>state.questionsId)
 
-
-export const getSingleQuestions=createSelector(myQuestions,myQuestionsId,(state,id)=>{
-    return state.find(x=>x.Id===id)
-})
-
-export const questionsReducer=createReducer<QuestionsInterface>(
+export const questionsReducer = createReducer<QuestionsInterface>(
     initialState,
-    on(getQuestions,(state)=>{
-        return{
-            ...state
-        }
-    }),
-    on(getQuestionsSuccess, (state,actions):QuestionsInterface=>{
-       return {
+    on(getQuestions, (state) => {
+      return {
         ...state,
-        error:'',
-        questions:actions.questions
-       } 
+      };
+    }),
+    on(getQuestionsSuccess, (state, actions): QuestionsInterface => {
+      return {
+        ...state,
+        error: '',
+        questions: actions.questions
+      };
+    }),
+    on(getQuestionsFail, (state, actions): QuestionsInterface => {
+      return {
+        ...state,
+        questions: [],
+        error: actions.error,
+      };
+    }),
+    on(getsingleQuestionsId, (state, actions): QuestionsInterface => {
+      return {
+        ...state,
+        questionsId: actions.id,
+      };
+    }),
+    on(addQuestionsSuccess, (state, actions): QuestionsInterface => {
+      return {
+        ...state,
+        addError: '',
+        addSuccess: actions.message.message,
+      };
+    }),
+    on(addQuestionsFail, (state, actions): QuestionsInterface => {
+      return {
+        ...state,
+        addError: actions.error,
+        addSuccess: '',
+      };
+    }),
+    on(updateQuestionsSuccess, (state, action): QuestionsInterface => {
+      const updatedQuestions = state.questions.map((item) => {
+        return item.Id === action.question.Id ? action.question : item;
+      });
+  
+      return {
+        ...state,
+        updateError: '',
+        questions: updatedQuestions,
+      };
+    }),
+    on(updateQuestionsFail, (state, action): QuestionsInterface => {
+      return {
+        ...state,
+        updateError: action.error,
+      };
+    }),
+    on(deleteQuestionsSuccess, (state, action): QuestionsInterface => {
+      return {
+        ...state,
+        deleteError: '',
+        deleteSuccess: action.message.message,
+      };
+    }),
+    on(deleteQuestionsFail, (state, action): QuestionsInterface => {
+      return {
+        ...state,
+        deleteError: action.error,
+        deleteSuccess: '',
+      };
     })
-    ,  on(getQuestionsFail, (state,actions):QuestionsInterface=>{
-        return {
-         ...state,
-         questions:[],
-        error:actions.error
-        } 
-     }),
-     on(getsingleQuestionsId,(state,actions):QuestionsInterface=>{
-        return{
-            ...state,
-            questionsId:actions.id
-        }
-     }),
-     on(addQuestionsSuccess,(state,actions):QuestionsInterface=>{
-        return{
-            ...state,
-            addError:'',
-            addSuccess:actions.message.message
-        }
-     }),
-     on(addQuestionsFail,(state,actions):QuestionsInterface=>{
-        return{
-            ...state,
-            addError:actions.error,
-            addSuccess:''
-        }
-     }),
-     on(updateQuestionsSuccess,(state,action):QuestionsInterface=>{
-
-        const updatedQuestions=state.questions.map(item=>{
-            return item.Id===action.question.Id?action.question:item
-        })
-
-        return{
-            ...state,
-            updateError:'',
-            questions:updatedQuestions
-        }
-     }),
-     on(updateQuestionsFail,(state,action):QuestionsInterface=>{
-        return{
-            ...state,
-            updateError:action.error
-        }
-     }),
-     on(deleteQuestionsSuccess,(state,action):QuestionsInterface=>{
-        return {
-            ...state,
-            deleteError:'',
-            deleteSuccess:action.message.message
-        }
-     }),
-     on(deleteQuestionsFail,(state,action):QuestionsInterface=>{
-        return {
-            ...state,
-            deleteError:action.error,
-            deleteSuccess:''
-        }
-     })
-)
+);

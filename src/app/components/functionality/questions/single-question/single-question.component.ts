@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { IncreaseValue, DecreaseValue } from 'src/app/State/Actions/counterAction';
 import { CountState } from 'src/app/State/Reducers/countReducer';
 import { AppState } from 'src/app/State/appState';
+import {CounterService } from '../../../../Services/countService'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from 'src/app/components/interfaces';
 // import { CountState } from '../../../../State/Reducers/countReducer';
@@ -19,6 +20,8 @@ import { User } from 'src/app/components/interfaces';
 })
 export class SingleQuestionComponent implements OnInit {
   form!:FormGroup
+  // CounterService: any;
+  // counterService: any;
 
   constructor(private fb:FormBuilder, private router:Router,private store:Store<AppState>){
   }
@@ -39,7 +42,9 @@ export class SingleQuestionComponent implements OnInit {
   submitForm(){
     if(this.form.valid){
       console.log(this.form.value);
-    
+      // this.CounterService.sendCountToDatabase().subscribe(
+      //   (        response: any) => console.log(response)
+      // );
       // this.store.dispatch(UserActions.register({Name:this.form.value.Name,Email:this.form.value.Email,Password:this.form.value.Password}))
       this.form.reset();
        this.router.navigate(['public/allQuestions'])
@@ -49,8 +54,12 @@ count!:number
 //  constructor(private store:Store<AppState>){}
   Add(){
   this.store.dispatch(IncreaseValue({increaseBy:1}))
+  // this.CounterService.increment();
+  //   this.count = this.CounterService.count;
   }
   Minus(){
     this.store.dispatch(DecreaseValue({decreaseBy:1}))
+    // this.CounterService.decrement();
+    // this.count = this.CounterService.count;
   }
 }

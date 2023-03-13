@@ -21,15 +21,18 @@ export class SignupComponent implements OnInit{
   }
   ngOnInit(): void {
     this.form = this.fb.group({
-      Name:[null, Validators.required],
-      Email:[null, [Validators.required, Validators.email]],
-      Password:[null, Validators.required]
+      name:[null, Validators.required],
+      email:[null, [Validators.required, Validators.email]],
+      password:[null, Validators.required]
     })
   }
   submitForm(){
     if(this.form.valid){
       console.log(this.form.value)
-      this.store.dispatch(UserActions.register({Name:this.form.value.Name,Email:this.form.value.Email,Password:this.form.value.Password}))
+      this.store.dispatch(UserActions.register({
+        name: this.form.value.name, email: this.form.value.email, password: this.form.value.password,
+        id:Math.floor(Math.random() *10000)}
+      ))
       this.form.reset();
       this.router.navigate(['Login'])
     }

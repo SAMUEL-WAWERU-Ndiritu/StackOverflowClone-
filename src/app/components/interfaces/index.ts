@@ -1,7 +1,8 @@
 export interface User{
-    Name:string
-    Email:string
-    Password:string
+    id:number
+    name:string
+    email:string
+    password:string
 }
 
 export interface Message{
@@ -9,8 +10,8 @@ export interface Message{
 }
 
 export interface LoginUser{
-    Email:string
-    Password:string
+    email:string
+    password:string
 }
 
 export interface LoginSuccess{

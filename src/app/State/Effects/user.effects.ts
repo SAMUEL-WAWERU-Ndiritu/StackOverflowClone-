@@ -29,7 +29,7 @@ export class UserEffects{
             return this.actions$.pipe(
                 ofType(UserActions.login),
                 mergeMap((action:LoginUser)=>{
-                return this.userService.login(action.Email,action.Password).pipe(
+                return this.userService.login(action.email,action.password).pipe(
                         map((successResponse:any)=>{
 
                             localStorage.setItem('token',successResponse.token)
@@ -47,7 +47,7 @@ export class UserEffects{
         return this.actions$.pipe(
             ofType(UserActions.register),
             concatMap((action:User)=>{
-                return this.userService.register(action.Name,action.Email,action.Password).pipe(
+                return this.userService.register(action.name,action.email,action.password).pipe(
                     map(successResponse=>{
                         console.log(successResponse)
                         return UserActions.registerSuccess({message:'User Registered Successfully'})

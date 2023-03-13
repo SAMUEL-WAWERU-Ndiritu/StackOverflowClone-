@@ -26,14 +26,14 @@ export class LoginComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.form = this.fb.group({
-      Email:[null, [Validators.required, Validators.email]],
-      Password:[null, Validators.required]
+      email:[null, [Validators.required, Validators.email]],
+      password:[null, Validators.required]
     })
   }
 
   submitForm(){
     if(this.form.valid){
-      this.store.dispatch(UserActions.login({Email:this.form.value.Email,Password:this.form.value.Password}))
+      this.store.dispatch(UserActions.login({email:this.form.value.email,password:this.form.value.password}))
       this.AuthService.login()
       this.form.reset();
       this.router.navigate(['public/allQuestions'])

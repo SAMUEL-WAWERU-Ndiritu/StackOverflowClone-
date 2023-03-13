@@ -16,9 +16,10 @@ export interface UserInterface{
 
 const initialState:UserInterface={
     user:[{
-        Name:'test',
-        Email:'',
-        Password:'',
+        id:0,
+        name:'test',
+        email:'',
+        password:'',
     }],
     error:'',
     loginSuccess:{

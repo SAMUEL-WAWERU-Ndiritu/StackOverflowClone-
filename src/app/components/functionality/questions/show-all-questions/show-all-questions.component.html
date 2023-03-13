@@ -1,111 +1,61 @@
 <div class="container">
     <div class="row">
-        <div class="header">
-            <h3>Top Questions</h3>
-            <p><button routerLink="../askQuestion" type="btn btn-primary btn-md text-white">Ask Question</button></p>
+      <div class="header">
+        <h3>Top Questions</h3>
+        <p><button routerLink="../askQuestion" type="btn btn-primary btn-md text-white">Ask Question</button></p>
+      </div>
+      <!-- <p class="total"><span><b>{{(questions$ | async)?.length}}</b></span> Questions</p> -->
+      <hr/>
+  
+      <div class="question" *ngFor="let question of questions" >
+        <h4 [routerLink]="['singleQuestion', question.Id]">{{question.Title}}</h4>
+        <div class="quiz">
+          <div>
+            <p>1</p>
+            <h5>Votes</h5>
+          </div>
+          <div>
+            <p>0</p>
+            <h5>Answers</h5>
+          </div>
+          <div>
+            <p>{{question.Tags}}</p>
+            <h5>Tags</h5>
+          </div>
+          <div>
+            <h5>Asked <span>{{question.Date}}</span> days ago</h5>
+          </div>
         </div>
-        <p class="total"><span><b>9</b></span> Questions</p>
-        <hr/>
-        <div class="question">
-            <h4 routerLink="../singleQuestion" >What is your name</h4>
-            <div class="quiz">
-                <div>
-                    <p>1</p>
-                    <h5>Votes</h5>
-                </div>
-                <div>
-                    <p>0</p>
-                    <h5>Answers</h5>
-                </div>
-                <div>
-                    <p>text</p>
-                    <h5>Tags</h5>
-                </div>
-                <div>
-                    <h5>Asked <span>2</span> days a go</h5>
-                </div>
-            </div>
+      </div>
+<!--   
+      <div class="question">
+        <h4 routerLink="../singleQuestion">What is your name</h4>
+        <div class="quiz">
+          <div>
+            <p>1</p>
+            <h5>Votes</h5>
+          </div>
+          <div>
+            <p>0</p>
+            <h5>Answers</h5>
+          </div>
+          <div>
+            <p>text</p>
+            <h5>Tags</h5>
+          </div>
+          <div>
+            <h5>Asked <span>2</span> days ago</h5>
+          </div>
         </div>
-        <div class="question" *ngFor="let question of questions$ |async" [routerLink]="['/singleQuestion',question.Id]" >
-         
-            <h4 routerLink="../singleQuestion" >{{question.Title}}</h4>
-            <div class="quiz">
-                <div>
-                    <p>1</p>
-                    <h5>Votes</h5>
-                </div>
-                <div>
-                    <p>0</p>
-                    <h5>Answers</h5>
-                </div>
-                <div>
-                    <p>{{question.Tags}}</p>
-                    <h5>Tags</h5>
-                </div>
-                <div>
-                    <h5>Asked <span>{{question.Date}}</span> days a go</h5>
-                </div>
-            </div>
-        </div>
-        <div class="question">
-            <h4 routerLink="../singleQuestion" >What is your name</h4>
-            <div class="quiz">
-                <div>
-                    <p>1</p>
-                    <h5>Votes</h5>
-                </div>
-                <div>
-                    <p>0</p>
-                    <h5>Answers</h5>
-                </div>
-                <div>
-                    <p>text</p>
-                    <h5>Tags</h5>
-                </div>
-                <div>
-                    <h5>Asked <span>2</span> days a go</h5>
-                </div>
-            </div>
-        </div>
-        <div class="question">
-            <h4 routerLink="../singleQuestion" >What is your name</h4>
-            <div class="quiz">
-                <div>
-                    <p>1</p>
-                    <h5>Votes</h5>
-                </div>
-                <div>
-                    <p>0</p>
-                    <h5>Answers</h5>
-                </div>
-                <div>
-                    <p>text</p>
-                    <h5>Tags</h5>
-                </div>
-                <div>
-                    <h5>Asked <span>2</span> days a go</h5>
-                </div>
-            </div>
-        </div>
-        <div class="question">
-            <h4 routerLink="../singleQuestion">What is your name</h4>
-            <div class="quiz">
-                <div>
-                    <p>1</p>
-                    <h5>Votes</h5>
-                </div>
-                <div>
-                    <p>0</p>
-                    <h5>Answers</h5>
-                </div>
-                <div>
-                    <p>text</p>
-                    <h5>Tags</h5>
-                </div>
-                <div>
-                    <h5>Asked <span>2</span> days a go</h5>
-                </div>
-            </div>
-        </div>
+      </div>  -->
+  
     </div>
-</div>
+    <!-- <tr *ngFor="let question of questions">
+      <td>{{ question.Id }}</td>
+      <td>{{ question.Title }}</td>
+      <td>{{ question.Body }}</td>
+      <td>{{ question.Tags }}</td>
+      <td>{{ question.Date }}</td>
+    </tr> -->
+  </div>
+  

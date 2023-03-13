@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule, Params, ActivatedRoute } from '@angular/router';
@@ -8,6 +10,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { QuestionsService } from 'src/app/Services/questions.service'
 import { Store } from '@ngrx/store';
 import { Observable, map } from 'rxjs';
+import { AppState } from 'src/app/State/appState';
 @Component({
   selector: 'app-show-all-questions',
   standalone: true,
@@ -16,30 +19,20 @@ import { Observable, map } from 'rxjs';
   styleUrls: ['./show-all-questions.component.css']
 })
 export class ShowAllQuestionsComponent implements OnInit {
-  questions$!:Observable<Questions[]>;
-  
-  questions: { id: string; Id: string; Title: string; Body: string; Tags: string; Date: string; }[] | undefined;
 
-  // questions$:Questions[]=[];
-  constructor(public auth:AuthService, private router:Router, private store:Store<any>, private route:ActivatedRoute){}
+  questions!: Questions[];
+  constructor(public auth:AuthService, private router:Router, private store:Store<AppState>, private route:ActivatedRoute){}
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params:Params)=>{
-   // this.bookingService.getUserBooking()
-     this.questions$=this.store.select(myQuestions)
-     this.store.dispatch(getQuestions());
-     this.questions$.pipe(map(x=>{
-        let questionsArray=[]
-        for(let key in x){
-          questionsArray.push({...x[key], id:key})
+
+ this.store.select(myQuestions).subscribe(questions =>{
+  console.log(questions);
+  let questionsArray=[]
+        for(let key in questions){
+          questionsArray.push({...questions[key], id:key})
         }
-        return questionsArray
-      })).subscribe(question=>{
-        this.questions =question
-      })
-  
-  
-    })
- 
+        console.log( questionsArray)
+  this.questions =questionsArray
+ })
   } 
   
   // deleteProduct(id: string) {

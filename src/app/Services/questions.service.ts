@@ -8,10 +8,11 @@ import { AddQuestions, Message, Questions } from '../components/interfaces';
   providedIn: 'root'
 })
 export class QuestionsService {
-
   constructor( private http:HttpClient) { }
   questions$=new Subject<Questions[]>()
-
+  getQuestions(): Observable<Questions[]> {
+    return this.http.get<Questions[]>('https://stack-overflow-2abf3-default-rtdb.firebaseio.com/Questions.json');
+  }
   addQuestions( questions:AddQuestions):Observable<Message>{
     // return this.http.post<Message>('http://localhost:4000/flights', questions)
     return this.http.post<Message>('https://stack-overflow-2abf3-default-rtdb.firebaseio.com/Questions.json',questions)

@@ -21,35 +21,27 @@ import * as QuestionsActions from '../../../../State/Actions/questionsActions'
   styleUrls: ['./ask-question.component.css']
 })
 export class AskQuestionComponent  implements OnInit {
-  show=false
-  form!:FormGroup
-  questions$!:Observable<Questions[]>
-  constructor(private fb:FormBuilder,public auth:AuthService, private router:Router, private store:Store<any>){}
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      Title:[null, [Validators.required]],
-      Body:[null, Validators.required], 
-      Tags:[null, Validators.required],
-    })
- 
-  }
+  
+form!:FormGroup
+constructor(private fb:FormBuilder, private router:Router,private store : Store<{questions:Questions}>){
 
-  submitForm(){
-      // this.store.dispatch(addQuestions({newquestions:this.form.value}))
-      this.store.dispatch(QuestionsActions.addQuestions({newquestions:this.form.value}))
-      // this.router.navigate([''])
-      console.log(this.form.value)
-    
-  }
-  // showForm(){
-  // // this.show=!this.show
-  //   this.store.dispatch(ShowFormAction())
-  // }
-  // ShowMore(){
-  // this.router.navigate(['/allQuestions'])
-  // }
 }
-// function ShowFormAction(): any {
-//   throw new Error('Function not implemented.');
-// }
+ngOnInit(): void {
+  this.form = this.fb.group({
+    Title:[null, [Validators.required]],
+    Body:[null, Validators.required], 
+    Tags:[null, Validators.required],
+  })
 
+}
+submitForm(){
+  if(this.form.valid){
+
+    let questions :Questions= {...this.form.value, id:Math.floor(Math.random() *10000)};
+    console.log(this.form.value)
+    this.store.dispatch(QuestionsActions.addQuestions({newquestions:questions}))
+    this.form.reset();
+    this.router.navigate(['public/allQuestions'])
+  }
+}
+}

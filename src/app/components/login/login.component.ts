@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     if(this.form.valid){
       this.store.dispatch(UserActions.login({Email:this.form.value.Email,Password:this.form.value.Password}))
       this.AuthService.login()
+      this.form.reset();
       this.router.navigate(['public/allQuestions'])
     
     }

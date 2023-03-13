@@ -15,9 +15,12 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { questionsReducer } from './State/Reducers/questionsReducer';
 import { QuestionsEffect } from './State/Effects/questionsEffects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CounterReducer } from './State/Reducers/countReducer';
+
 @NgModule({
     declarations: [
         AppComponent,
+    
     ],
     providers: [],
     bootstrap: [AppComponent,],
@@ -29,11 +32,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
         HttpClientModule,
         EditorModule,
         FooterComponent,
-        StoreModule.forRoot({ users:userReducer}),
-        EffectsModule.forRoot([UserEffects]),
+        StoreModule.forRoot({ users:userReducer, Questions: questionsReducer,counter:CounterReducer,}),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-        // StoreModule.forRoot({ Questions: questionsReducer}),
-        // EffectsModule.forRoot([QuestionsEffect])
+        EffectsModule.forRoot([UserEffects,QuestionsEffect]),  
+      
+       
     ]
 })
 export class AppModule { }

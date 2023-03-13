@@ -4,15 +4,19 @@
             <h4>test</h4>
             <div class="quiz-data">
                 <div class="quiz-data-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg>
-                    <p>1</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"/></svg>
+                    <svg (click)="Add()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg>
+                    <p>{{count}}</p>
+                    <svg (click)="Minus()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"/></svg>
                 </div>
                 <div class="quiz-data-s">
                     <h5>"img src=dd onerror=alert('pwned')>"</h5>
                     <p>tag</p>
                 </div>
             </div>
+
+            
+
+
             <div class="quiz-data-end">
                 <div class="data-start">
                     <p>Share</p>
@@ -30,12 +34,13 @@
          </div>
 <hr/>
          <div class="contain">
-            <form class="form-group">
+
+            <form  [formGroup]="form" (ngSubmit)="submitForm()"  class="form-group">
               
                 <div class="form-control" id="form-c">
                     <h4>Your Answer</h4>
                    
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea formControlName="Answer" name="" id="" cols="30" rows="10"></textarea>
                 </div>
             
                 <div class="btn" ><button type="submit">Post Your Answer</button></div>

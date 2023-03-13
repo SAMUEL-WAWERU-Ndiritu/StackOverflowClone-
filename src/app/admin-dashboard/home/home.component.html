@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2" id="dashboard">
+            <header>
+                <img src="../../../assets/images/usericon.png" alt=""/>
+                <div class="header-left">
+                    <h4>Samuel Nderitu</h4>
+                    <p>samuel@gmail.com</p>
+                </div>
+            </header>
+            <hr/>
+            <div class="links">
+                <ul>
+                    <li><a routerLink="users">Manage Users</a></li>
+                    <li><a routerLink="posts">Manage Posts</a></li>
+                    <li><a href="">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10"><router-outlet></router-outlet></div>
+    </div>
+</div>

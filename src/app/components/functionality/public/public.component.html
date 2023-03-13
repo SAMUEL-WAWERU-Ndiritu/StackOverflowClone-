@@ -37,18 +37,18 @@
                     <li><h4><a href="">Public</a></h4>
                     
                     <ul>
-                        <li><h4><a routerLink="public/allQuestions">Questions</a></h4></li>
-                        <li><h4><a href="">Tags</a></h4></li>
-                        <li><h4><a href="">Users</a></h4></li>
-                        <li><h4><a href="">Companies</a></h4></li>
+                        <li><h4><a routerLink="allQuestions">Questions</a></h4></li>
+                        <li><h4><a routerLink="tags">Tags</a></h4></li>
+                        <li><h4><a routerLink="users">Users</a></h4></li>
+                        <!-- <li><h4><a href="">Companies</a></h4></li> -->
                     </ul>
                     
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="col-md-7"><router-outlet></router-outlet></div>
-        <div class="col-md-3">
+        <div class="col-md-7 " id="content" ><router-outlet></router-outlet></div>
+        <div class="col-md-3" id="blog">
             <div class="cont">
                 <h3>The Overflow Blog</h3>
                 <div class="cont-1">

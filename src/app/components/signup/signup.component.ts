@@ -30,7 +30,17 @@ export class SignupComponent implements OnInit{
     if(this.form.valid){
       console.log(this.form.value)
       this.store.dispatch(UserActions.register({Name:this.form.value.Name,Email:this.form.value.Email,Password:this.form.value.Password}))
-      this.router.navigate([''])
+      this.form.reset();
+      this.router.navigate(['Login'])
     }
   }
 }
+
+
+
+
+
+
+
+
+

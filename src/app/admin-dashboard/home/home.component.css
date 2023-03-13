@@ -1,0 +1,73 @@
+
+@media screen and (max-width: 786px) {
+    #dashboard{
+        width: 100%;
+        height: 30vh;
+    }
+    .links ul{
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+    }
+}
+
+
+#dashboard{
+    height: 100vh;
+    background-color: #3d3d3d;;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+header > img{
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    /* padding: 10px; */
+}
+.header-left{
+    /* margin-left: 5px; */
+    padding-right: 10px;
+    /* background-color: rgb(50, 50, 56); */
+    text-align: center;
+}
+.header-left h4{
+    font-size: medium;
+    font-weight: 400;
+    color: rgb(235, 227, 227);
+    text-align: center;
+}
+.header-left p{
+    font-size: small;
+    font-weight: 300;
+    color: rgb(235, 227, 227);
+    text-align: center;
+}
+.links{
+    margin-top: 30px;
+    margin-left: 18px;
+}
+.links ul{
+    display: flex;
+    justify-content: center ;
+    flex-direction: column;
+    gap: 20px;
+}
+.links ul li{
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+.links ul li a{
+    text-decoration: none;
+    color:white;
+    transition: 0.3s;
+}
+.links ul li a:hover{
+    color: gray;
+    border-bottom: 1px dotted gray;
+}

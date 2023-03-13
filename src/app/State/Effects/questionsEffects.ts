@@ -9,14 +9,13 @@ export class QuestionsEffect{
 
     constructor(private questionsService:QuestionsService,private actions$:Actions ){}
 
-    loadQuestions=createEffect(()=>{
+    getQuestions=createEffect(()=>{
         return this.actions$.pipe(
             ofType(QuestionsActions.getQuestions),
             mergeMap(()=>{
                return this.questionsService.getUserQuestions().pipe(
-                    map(questions=>{
-                        return QuestionsActions.getQuestionsSuccess({questions})
-                    }),
+                    map(questions=> QuestionsActions.getQuestionsSuccess({questions: questions})
+                    ),
                     catchError(error=>of(QuestionsActions.getQuestionsFail({error:error.message})))
                 )
             })

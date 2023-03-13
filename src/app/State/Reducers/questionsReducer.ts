@@ -1,6 +1,6 @@
 import { createFeatureSelector, createReducer, createSelector, on } from "@ngrx/store";
 import { Questions } from "../../components/interfaces";
-import { addQuestionsFail, addQuestionsSuccess, deleteQuestionsFail, deleteQuestionsSuccess, getQuestionsFail, getQuestionsSuccess, getsingleQuestionsId, updateQuestionsFail, updateQuestionsSuccess } from "../Actions/questionsActions";
+import { addQuestionsFail, addQuestionsSuccess, deleteQuestionsFail, deleteQuestionsSuccess, getQuestions, getQuestionsFail, getQuestionsSuccess, getsingleQuestionsId, updateQuestionsFail, updateQuestionsSuccess } from "../Actions/questionsActions";
 
 export interface QuestionsInterface{
 questions:Questions[]
@@ -36,6 +36,11 @@ export const getSingleQuestions=createSelector(myQuestions,myQuestionsId,(state,
 
 export const questionsReducer=createReducer<QuestionsInterface>(
     initialState,
+    on(getQuestions,(state)=>{
+        return{
+            ...state
+        }
+    }),
     on(getQuestionsSuccess, (state,actions):QuestionsInterface=>{
        return {
         ...state,

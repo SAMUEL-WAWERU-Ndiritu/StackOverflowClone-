@@ -20,7 +20,17 @@ const routes: Routes = [
   {path:'tags', loadComponent: () => import('./components/functionality/tags/tags.component').then(k => k.TagsComponent )},
   {path:'users', loadComponent: () => import('./components/functionality/users/users.component').then(k => k.UsersComponent )},
   {path:'profile', loadComponent: () => import('./components/functionality/users/profile/profile.component').then(k => k.ProfileComponent )},
-] }
+] },
+{path:'admin', loadComponent: () => import('./admin-dashboard/home/home.component').then(k => k.HomeComponent), children:[
+  {
+    path: 'users',
+    loadComponent: () =>
+      import('./admin-dashboard/home/users-dashboard/users-dashboard.component').then((p) => p.UsersDashboardComponent),
+    pathMatch: 'full',
+  },
+  {path:'users', loadComponent: () => import('./admin-dashboard/home/users-dashboard/users-dashboard.component').then(k => k.UsersDashboardComponent),pathMatch: 'full', },
+  {path:'posts', loadComponent: () => import('./admin-dashboard/home/posts-dashboard/posts-dashboard.component').then(k => k.PostsDashboardComponent) },
+]}
 ];
 
 @NgModule({

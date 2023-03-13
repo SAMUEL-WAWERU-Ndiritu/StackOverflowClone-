@@ -3,6 +3,8 @@ import { AppState } from './State/appState';
 import { Store } from '@ngrx/store';
 import * as UsersActions from './State/Actions/user.actions';
 import * as QuestionsActions from './State/Actions/questionsActions';
+import { Questions, User } from './components/interfaces';
+// import * counterActions from './State/Actions/counterAction'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,8 +12,8 @@ import * as QuestionsActions from './State/Actions/questionsActions';
 })
 export class AppComponent implements OnInit {
 
-  // questions$: Question[] = [];
-
+  questions$: Questions[] = [];
+  user$: User[] = [];
   constructor(private store: Store<AppState>) {
 
     

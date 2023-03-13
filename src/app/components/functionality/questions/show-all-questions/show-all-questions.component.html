@@ -26,8 +26,29 @@
                 </div>
             </div>
         </div>
+        <div class="question" *ngFor="let question of questions$ |async" [routerLink]="['/singleQuestion',question.Id]" >
+         
+            <h4 routerLink="../singleQuestion" >{{question.Title}}</h4>
+            <div class="quiz">
+                <div>
+                    <p>1</p>
+                    <h5>Votes</h5>
+                </div>
+                <div>
+                    <p>0</p>
+                    <h5>Answers</h5>
+                </div>
+                <div>
+                    <p>{{question.Tags}}</p>
+                    <h5>Tags</h5>
+                </div>
+                <div>
+                    <h5>Asked <span>{{question.Date}}</span> days a go</h5>
+                </div>
+            </div>
+        </div>
         <div class="question">
-            <h4>What is your name</h4>
+            <h4 routerLink="../singleQuestion" >What is your name</h4>
             <div class="quiz">
                 <div>
                     <p>1</p>
@@ -47,7 +68,7 @@
             </div>
         </div>
         <div class="question">
-            <h4>What is your name</h4>
+            <h4 routerLink="../singleQuestion" >What is your name</h4>
             <div class="quiz">
                 <div>
                     <p>1</p>
@@ -67,27 +88,7 @@
             </div>
         </div>
         <div class="question">
-            <h4>What is your name</h4>
-            <div class="quiz">
-                <div>
-                    <p>1</p>
-                    <h5>Votes</h5>
-                </div>
-                <div>
-                    <p>0</p>
-                    <h5>Answers</h5>
-                </div>
-                <div>
-                    <p>text</p>
-                    <h5>Tags</h5>
-                </div>
-                <div>
-                    <h5>Asked <span>2</span> days a go</h5>
-                </div>
-            </div>
-        </div>
-        <div class="question">
-            <h4>What is your name</h4>
+            <h4 routerLink="../singleQuestion">What is your name</h4>
             <div class="quiz">
                 <div>
                     <p>1</p>

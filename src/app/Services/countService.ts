@@ -18,8 +18,11 @@ export class CounterService {
   }
 
   sendCountToDatabase() {
-    const url = 'http://example.com/count';
-    const data = { count: this.count };
+    const url = 'https://stack-overflow-2abf3-default-rtdb.firebaseio.com/Count.json';
+    const data = {
+      count: this.count,
+      timestamp: new Date().getTime() // add timestamp to data
+    };
     return this.http.post(url, data);
   }
 }

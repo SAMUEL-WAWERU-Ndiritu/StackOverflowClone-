@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {path:'allQuestions', loadComponent: () => import('./components/functionality/questions/show-all-questions/show-all-questions.component').then(k => k.ShowAllQuestionsComponent) },
   {path:'askQuestion', loadComponent: () => import('./components/functionality/questions/ask-question/ask-question.component').then(k => k.AskQuestionComponent)},
-  {path:'singleQuestion', loadComponent: () => import('./components/functionality/questions/single-question/single-question.component').then(k => k.SingleQuestionComponent)},
+  {path:'singleQuestion/:id', loadComponent: () => import('./components/functionality/questions/single-question/single-question.component').then(k => k.SingleQuestionComponent)},
   {path:'tags', loadComponent: () => import('./components/functionality/tags/tags.component').then(k => k.TagsComponent )},
   {path:'users', loadComponent: () => import('./components/functionality/users/users.component').then(k => k.UsersComponent )},
   {path:'profile', loadComponent: () => import('./components/functionality/users/profile/profile.component').then(k => k.ProfileComponent )},

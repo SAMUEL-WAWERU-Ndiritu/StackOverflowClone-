@@ -33,3 +33,7 @@ export interface AddQuestions{
     Body:string
     Tags:string
 }
+export interface Answers{
+    id:string,
+    answers:string
+}

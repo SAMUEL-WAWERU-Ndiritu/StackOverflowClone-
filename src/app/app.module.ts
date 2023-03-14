@@ -16,6 +16,8 @@ import { questionsReducer } from './State/Reducers/questionsReducer';
 import { QuestionsEffect } from './State/Effects/questionsEffects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CounterReducer } from './State/Reducers/countReducer';
+import { AnswersReducer } from './State/Reducers/answersReducers';
+import { AnswersEffect } from './State/Effects/answersEffects';
 
 @NgModule({
     declarations: [
@@ -32,9 +34,9 @@ import { CounterReducer } from './State/Reducers/countReducer';
         HttpClientModule,
         EditorModule,
         FooterComponent,
-        StoreModule.forRoot({ users:userReducer, Questions: questionsReducer,counter:CounterReducer,}),
+        StoreModule.forRoot({ users:userReducer, Questions: questionsReducer,counter:CounterReducer,Answers:AnswersReducer}),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-        EffectsModule.forRoot([UserEffects,QuestionsEffect]),  
+        EffectsModule.forRoot([UserEffects,QuestionsEffect,AnswersEffect]),  
       
        
     ]

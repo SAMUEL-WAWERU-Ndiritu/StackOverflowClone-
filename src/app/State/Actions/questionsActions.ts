@@ -74,3 +74,7 @@ export const deleteQuestionsFail= createAction(
     '[deleteQuestions]-deleteQuestionsFail',
     props<{error:string}>()
 )
+
+export function getAnswers(getAnswers: any): import("rxjs").OperatorFunction<import("@ngrx/store").Action, any> {
+    throw new Error("Function not implemented.");
+}
